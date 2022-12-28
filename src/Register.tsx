@@ -7,7 +7,6 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
   const { signup, isPending, error } = useSignup();
   const { dispatch } = useAuthContext();
 
@@ -18,7 +17,7 @@ function Register() {
   };
 
   return (
-    <div className="App flex flex-col items-center justify-center">
+    <div className="App flex flex-col   items-center justify-center">
       <form
         onSubmit={handleSubmission}
         className="border p-5 w-[400px] flex flex-col justify-center items-center mt-10  gap-2 bg-gray-300 rounded-md"
@@ -64,7 +63,10 @@ function Register() {
             </button>
           )}
           {isPending && (
-            <button className="btn" disabled>
+            <button
+              className="btn   border-green-500 bg-green-400 border px-5 py-1 rounded-lg transition-all  hover:bg-green-600"
+              disabled
+            >
               loading
             </button>
           )}
