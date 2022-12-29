@@ -29,6 +29,7 @@ function Register() {
           className="px-2"
           placeholder="Name"
           type="text"
+          value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
         />
         <span>Email</span>
@@ -36,6 +37,7 @@ function Register() {
           className="px-2"
           placeholder="Email"
           type="email"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <span>Password</span>
