@@ -8,7 +8,7 @@ function Register() {
   const [password, setPassword] = useState("");
 
   const { signup, isPending, error } = useSignup();
-  const { dispatch } = useAuthContext();
+ 
 
   const handleSubmission = (e: { preventDefault: () => void }) => {
     e.preventDefault();
