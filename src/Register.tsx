@@ -8,7 +8,6 @@ function Register() {
   const [password, setPassword] = useState("");
 
   const { signup, isPending, error } = useSignup();
- 
 
   const handleSubmission = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -20,7 +19,7 @@ function Register() {
     <div className="App flex flex-col   items-center justify-center">
       <form
         onSubmit={handleSubmission}
-        className="border p-5 w-[400px] flex flex-col justify-center items-center mt-10  gap-2 bg-gray-300 rounded-md"
+        className="border p-5 sm:w-[40%]  w-full  flex flex-col justify-center items-center mt-10  gap-2 bg-gray-300 rounded-md"
       >
         <h1 className="text-2xl font-bold">Registration</h1>
 
