@@ -13,6 +13,11 @@ function Navbar() {
             <>
               <Link to="/">
                 <h1 className=" flex items-center justify-center h-[40px] ">
+                  Home
+                </h1>
+              </Link>
+              <Link to="/register">
+                <h1 className=" flex items-center justify-center h-[40px] ">
                   SignUp
                 </h1>
               </Link>
@@ -26,6 +31,11 @@ function Navbar() {
 
           {user && (
             <>
+              <Link to="/">
+                <h1 className=" flex items-center justify-center h-[40px] ">
+                  Home
+                </h1>
+              </Link>
               <h1 className="h-[40px]  flex justify-center items-center">
                 Welcome, {user.displayName}
               </h1>
