@@ -1,12 +1,13 @@
 import { useState } from "react";
-
-export default function TransactionForm() {
+import { useFirestore } from "./hooks/useFirestore";
+export default function TransactionForm({ uid }) {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
-
+  const { addDocument, response } = useFirestore("transactions");
   const handleSumbit = (e) => {
     e.preventDefault();
-    console.log({
+    addDocument({
+      uid,
       name,
       amount,
     });

@@ -1,7 +1,8 @@
-import firebase, { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
 import { getAuth } from "firebase/auth";
-
+import { getFirestore, Timestamp } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyBBbIAESAP1v1jXx8O7POWOypK59Vqd6IU",
   authDomain: "cricketreg-d0e3d.firebaseapp.com",
@@ -13,6 +14,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { app, auth };
+//timestamp
+const timestamp = Timestamp;
+
+export { app, auth, db, timestamp };
