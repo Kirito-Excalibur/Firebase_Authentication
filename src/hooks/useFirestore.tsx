@@ -1,7 +1,7 @@
 import { useReducer, useEffect, useState } from "react";
 import { db, timestamp } from "../firebase";
 
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, setDoc } from "firebase/firestore";
 let initialState = {
   document: null,
   isPending: false,
@@ -27,6 +27,7 @@ const firestoreReducer = (state, action) => {
         error: null,
         document: action.payload,
       };
+
     default:
       return state;
   }
@@ -57,7 +58,6 @@ export const useFirestore = (collections) => {
         type: "ADDED_DOCUMENT",
         payload: addedDocument,
       });
-      alert("Data added");
     } catch (err) {
       dispatchIfNotCancelled({ type: "ERROR", payload: err.message });
     }
